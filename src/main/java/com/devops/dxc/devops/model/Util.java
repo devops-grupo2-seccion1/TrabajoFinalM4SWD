@@ -22,6 +22,16 @@ public class Util {
         }
     }
 
+
+    public static int getImpuesto(int dxc){
+        //de momento siempre será 0.1 en etapa posterior se validara el porcentaje que aplica
+        if(dxc > 0 ){
+            return (int) (dxc*0.1) ;
+        } else {
+            return (int) (0);
+        }
+    }
+
     /**
      * Método que retorna el valor de la UF.  Este método debe ser refactorizado por una integración a un servicio
      * que retorne la UF en tiempo real.  Por ejemplo mindicador.cl
