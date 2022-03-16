@@ -23,11 +23,18 @@ public class DxcTest {
    @Test
    void testSaldo() throws Exception {
         Dxc di = new Dxc(100000000,0);
-        assertEquals(95650000,di.getSaldo() );
+        assertEquals(95247733,di.getSaldo() );
    }
    
    @Test
    void testImpuesto()throws Exception   {
+        Dxc di = new Dxc(1000,0);
+        assertEquals(0,di.getImpuesto() );
+   }
+
+
+   @Test
+   void testServicioUF()throws Exception   {
         Dxc di = new Dxc(1000,0);
         assertEquals(0,di.getImpuesto() );
    }
