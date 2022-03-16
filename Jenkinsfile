@@ -12,6 +12,11 @@ pipeline {
 				sh "mvn test"
             }
         }
+         stage('testnewman') {
+            steps {
+				sh "newman run laboratorio modulo 4.postman_collection.json"
+            }
+        }
         stage('compile') {
             steps {
 				sh "mvn compile"
