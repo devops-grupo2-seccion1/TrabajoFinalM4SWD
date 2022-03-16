@@ -38,6 +38,7 @@ public class Util {
      * @return
      */
     public static int getUf(){
+        // consumir la api de Por ejemplo mindicador.cl
         return 29000;
     }
     
