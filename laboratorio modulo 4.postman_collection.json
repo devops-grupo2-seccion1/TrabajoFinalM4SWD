@@ -120,6 +120,14 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "request UF",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
