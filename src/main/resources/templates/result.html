@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+ 
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+ 
+    <title>10%</title>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ 
+</head>
+ 
+<body>
+ 
+    <h1>Result</h1>
+ 
+    <p th:text="'sueldo: ' + ${dxc.getSueldo}" />
+ 
+    <p th:text="'ahorro: ' + ${dxc.getAhorro}" />
+ 
+    <p th:text="'dxc: ' + ${dxc.getDxc}" />
+    
+    <p th:text="'saldo: ' + ${dxc.getSaldo}" />
+    
+    <p th:text="'impuesto: ' + ${dxc.getImpuesto}" />
+    
+    <a href="/frontend/form">otro retiro</a>
+ 
+</body>
+ 
+</html>

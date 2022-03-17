@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <title>10%</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    </head>
+
+    <body>
+
+        <h1>Form</h1>
+
+        <form action="#" th:action="@{/frontend/form}" th:object="${dxc}" method="post">
+
+            <p>Sueldo: <input type="text" th:field="*{sueldo}" /></p>
+
+            <p>Ahorro: <input type="text" th:field="*{ahorro}" /></p>
+
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+        </form>
+
+    </body>
+
+</html>
