@@ -16,10 +16,16 @@ public class Util {
      * @param ahorro
      * @param sueldo
      * @return
+     *
+     * public static int getDxc(int ahorro, int sueldo) { if (((ahorro * 0.1) /
+     * getUf()) > 150) { return (int) (150 * getUf()); } else if ((ahorro * 0.1) <= 1000000 && ahorro
+     * >= 1000000) { return (int) 1000000; } else if (ahorro <= 1000000) {
+     * return (int) ahorro; } else { return (int) (ahorro * 0.1); } }
      */
-    public static int getDxc(int ahorro, int sueldo) {
-        if (((ahorro * 0.1) / getUf()) > 150) {
-            return (int) (150 * getUf());
+    
+    public static int getDxc(int ahorro, double uf) {
+        if (((ahorro * 0.1) / uf) > 150) {
+            return (int) (150 * uf);
         } else if ((ahorro * 0.1) <= 1000000 && ahorro >= 1000000) {
             return (int) 1000000;
         } else if (ahorro <= 1000000) {
@@ -55,7 +61,7 @@ public class Util {
         JSONObject jsonResponse = new JSONObject(result);
         JSONArray jsonArray = new JSONArray(jsonResponse.get("serie").toString());
         JSONObject jsonToday = new JSONObject(jsonArray.get(0).toString());
-        System.out.println("Valor UF:"+jsonToday.get("valor"));
+        System.out.println("Valor UF:" + jsonToday.get("valor"));
 
         return Double.parseDouble(jsonToday.get("valor").toString());
     }
