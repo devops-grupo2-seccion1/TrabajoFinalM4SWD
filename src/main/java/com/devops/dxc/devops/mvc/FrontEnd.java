@@ -26,6 +26,7 @@ public class FrontEnd {
 
     @PostMapping("/form")
     public String setResultado(@ModelAttribute Dxc dxc) {
+        dxc.calcular();
         return "result";
     }
 
