@@ -26,7 +26,7 @@ public class DxcTest {
    void testSaldo() throws Exception {
         Dxc di = new Dxc(100000000,0);
         di.calcular();
-        assertEquals(95247733,di.getSaldo() );
+        assertEquals(20,95247733,di.getSaldo() );
    }
    
    @Test
