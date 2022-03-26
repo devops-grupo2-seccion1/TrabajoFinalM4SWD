@@ -22,6 +22,12 @@ pipeline {
 				sh "mvn compile"
             }
         }
+        stage('run') {
+            steps {
+				sh "mvn spring-boot:run"
+                sleep 20
+            }
+        }
         stage('verify') {
             steps {
 				sh "mvn verify -Pperformance"
