@@ -14,7 +14,7 @@ pipeline {
         }
          stage('testnewman') {
             steps {
-				sh "newman run laboratorio modulo 4.postman_collection.json"
+				sh "newman run Dxc.postman_collection.json"
             }
         }
         stage('compile') {
