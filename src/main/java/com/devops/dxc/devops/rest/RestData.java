@@ -28,13 +28,29 @@ public class RestData {
         return response;
     }
 
+    @GetMapping(path = "/impuesto", produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    Integer getImpuesto(@RequestParam(name = "retiro") String retiro) {
+        LOGGER.log(Level.INFO, "< Trabajo DevOps - DXC > <Consultado impuesto>");
+        Integer response = Util.getImpuesto(Integer.parseInt(retiro));
+        return response;
+    }
+
+
+    @GetMapping(path = "/saldo", produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    Integer getSaldo(@RequestParam(name = "ahorro") String ahorro) {
+        LOGGER.log(Level.INFO, "< Trabajo DevOps - DXC > <Consultado saldo>");
+        Double uf = Util.getUf();
+        Integer response = Integer.parseInt(ahorro) - Util.getDxc(Integer.parseInt(ahorro), uf);
+        return response;
+    }
+
     @GetMapping(path = "/uf", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     double getDataUF() {
-
         LOGGER.log(Level.INFO, "< Trabajo DevOps - DXC > <Consultando uf>");
         Util u = new Util();
-
         return u.getUf();
     }
 }
