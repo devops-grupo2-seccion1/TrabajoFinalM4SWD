@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "306c02c9-ef06-43ab-83c9-633f6621ef0d",
-		"name": "laboratorio modulo 4",
+		"_postman_id": "05164b25-4a32-4719-b321-6a957bf75026",
+		"name": "lab-S1Grupo2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -123,9 +123,42 @@
 		},
 		{
 			"name": "request UF",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Code is 200\",function(){",
+							"    pm.response.to.have.status(200)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1200ms\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(1200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://mindicador.cl/api/uf",
+					"protocol": "https",
+					"host": [
+						"mindicador",
+						"cl"
+					],
+					"path": [
+						"api",
+						"uf"
+					]
+				}
 			},
 			"response": []
 		}

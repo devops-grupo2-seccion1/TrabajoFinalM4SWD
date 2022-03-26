@@ -12,7 +12,7 @@ pipeline {
 				sh "mvn test"
             }
         }
-         stage('testnewman') {
+         stage('Test Postman newman') {
             steps {
 				sh "newman run Dxc.postman_collection.json"
             }
