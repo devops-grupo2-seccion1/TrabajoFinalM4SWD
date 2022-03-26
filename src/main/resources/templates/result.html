@@ -19,29 +19,30 @@
                             <tbody>
                               <tr>
                                 <th scope="row">Sueldo</th>
-                                <td th:text="${dxc.getSueldo}"></td>
+                                <td id="sueldo" th:text="${dxc.getSueldo}"></td>
                               </tr>
                               <tr>
                                 <th scope="row">Ahorro</th>
-                                <td th:text="${dxc.getAhorro}"></td>
+                                <td id="ahorro" th:text="${dxc.getAhorro}"></td>
                               </tr>
                               <tr>
                                 <th scope="row">DXC</th>
-                                <td th:text="${dxc.getDxc}"></td>
+                                <td id="dxc" th:text="${dxc.getDxc}"></td>
                               </tr>
                               <tr>
                                 <th scope="row">Saldo</th>
-                                <td th:text="${dxc.getSaldo}"></td>
+                                <td id="saldo" th:text="${dxc.getSaldo}"></td>
                               </tr>
                               <tr>
                                 <th scope="row">Impuestos</th>
-                                <td th:text="${dxc.getImpuesto}"></td>
+                                <td id="impuesto" th:text="${dxc.getImpuesto}"></td>
                               </tr>
                             </tbody>
                           </table>
                     </div>
                 </div>
                 <br/>
+                <div class="float-left"> <p><b>Valor UF:</b><span id="uf" th:text="${dxc.getUf}"></span></p></div>
                 <a class="float-right" href="/frontend/form">Realizar otra simulación</a>
             </div>
         </div>
