@@ -70,6 +70,126 @@
 			"response": []
 		},
 		{
+			"name": "calcular impuesto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Code is 200\",function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/msdxc/impuesto?retiro=1000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"msdxc",
+						"impuesto"
+					],
+					"query": [
+						{
+							"key": "retiro",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular saldo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Code is 200\",function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/msdxc/saldo?ahorro=1000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"msdxc",
+						"saldo"
+					],
+					"query": [
+						{
+							"key": "ahorro",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "caso con saldo",
 			"event": [
 				{
@@ -148,14 +268,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://mindicador.cl/api/uf",
-					"protocol": "https",
+					"raw": "http://localhost:8080/rest/msdxc/uf",
+					"protocol": "http",
 					"host": [
-						"mindicador",
-						"cl"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
-						"api",
+						"rest",
+						"msdxc",
 						"uf"
 					]
 				}
