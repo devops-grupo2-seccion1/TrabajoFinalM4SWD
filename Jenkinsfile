@@ -27,5 +27,10 @@ pipeline {
                 sh 'sleep 20'
             }
         }
+        stage('Test Newman') {
+            steps {
+				sh "newman run Dxc.postman_collection.json"
+            }
+        }
     }
 }
