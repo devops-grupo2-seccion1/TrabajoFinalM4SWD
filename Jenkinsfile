@@ -17,24 +17,5 @@ pipeline {
 				sh "mvn compile"
             }
         }
-        stage("Levantar Springboot APP"){
-            steps {
-                sh 'mvn spring-boot:run &'
-            }
-        }
-        stage("Paso 6: Dormir(Esperar 20sg) "){
-            steps {
-                sh 'sleep 20'
-        }
-        stage('Test Postman newman') {
-            steps {
-				sh "newman run Dxc.postman_collection.json"
-            }
-        }
-        stage('verify') {
-            steps {
-				sh "mvn verify -Pperformance"
-            }
-        }
     }
 }
