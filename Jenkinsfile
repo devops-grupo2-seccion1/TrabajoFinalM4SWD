@@ -31,7 +31,7 @@ pipeline {
             steps {
 				sh "newman run Dxc.postman_collection.json"
             }
-        },
+        }
         stage('verify') {
             steps {
 				sh "mvn verify -Pperformance"
