@@ -17,11 +17,14 @@ pipeline {
 				sh "mvn compile"
             }
         }
-        stage('run') {
+        stage("Levantar Springboot APP"){
             steps {
-				sh "mvn spring-boot:run"
-                sleep 20
+                sh 'mvn spring-boot:run &'
             }
+        }
+        stage("Paso 6: Dormir(Esperar 20sg) "){
+            steps {
+                sh 'sleep 20'
         }
         stage('Test Postman newman') {
             steps {
