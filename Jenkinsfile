@@ -17,5 +17,10 @@ pipeline {
 				sh "mvn compile"
             }
         }
+        stage('Run APP'){
+            steps {
+                sh 'mvn spring-boot:run'
+            }
+        }
     }
 }
