@@ -22,5 +22,10 @@ pipeline {
                 sh 'mvn spring-boot:run &'
             }
         }
+        stage("Sleep"){
+            steps {
+                sh 'sleep 20'
+            }
+        }
     }
 }
