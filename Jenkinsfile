@@ -12,11 +12,6 @@ pipeline {
 				sh "mvn test"
             }
         }
-         stage('Test Postman newman') {
-            steps {
-				sh "newman run Dxc.postman_collection.json"
-            }
-        }
         stage('compile') {
             steps {
 				sh "mvn compile"
@@ -26,6 +21,11 @@ pipeline {
             steps {
 				sh "mvn spring-boot:run"
                 sleep 20
+            }
+        }
+        stage('Test Postman newman') {
+            steps {
+				sh "newman run Dxc.postman_collection.json"
             }
         }
         stage('verify') {
